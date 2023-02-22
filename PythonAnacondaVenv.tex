@@ -61,14 +61,14 @@
                 Often these environment files will be provided from complex packages which have specific install instructions.
                 \\E.g.\ for Psychopy: an \href{https://raw.githubusercontent.com/psychopy/psychopy/master/conda/psychopy-env.yml}{environment file} is provided to help create a virtual environment tailored to Psychopy.
                 \\Run ``conda env create -n \textlangle environment-name\textrangle -f psychopy-env.yml'' to create this environment
-        \subsection{A Footnote on Containers}
+        \subsection{A Note on Containers}
             Containers (e.g.\ Docker - \url{https://www.docker.com}) allow further abstraction down to the OS level beyond what virtual environments do.
             These are very useful for creating environments with completely different programs or with a programs set up in a way that is identical to someone else's set up.
     \section{Connecting Virtual Environment to VS Code}
         \subsection{What is an Interpreter?}
             An Interpreter is a program which takes code and executes it without compiling (line by line execution). This is how Python functions.
         \subsection{How do You Change the Interpreter?}
-            In Visual Studio Code, the Python Interpreter can be changed by selection the Python: Select Interpreter option in the Command Palate (Opened with ``Command + Shift + P'' on MacOS and ``Control + Shift + P'' on Windows/Linux)
-            \\After selecting Python: Select Interpreter, choose the Interpreter which have your environment name in parentheses. This will be the Anaconda virtual environment you created and will allow you to use any packages which you've installed.
+            In Visual Studio Code, the Python Interpreter can be changed by selecting the ``Python: Select Interpreter'' option in the Command Palate (Opened with ``Command + Shift + P'' on MacOS and ``Control + Shift + P'' on Windows/Linux)
+            \\After selecting ``Python: Select Interpreter'', choose the Interpreter which have your environment name in parentheses. This will be the Anaconda virtual environment you created and will allow you to use any packages which you've installed.
 \end{document}
 
