@@ -12,7 +12,7 @@
 
     \section{Installing Python and/or Anaconda}
         \subsection{Download and Install}
-            \url{https://www.anaconda.com/products/distribution} \\Download corresponding version of Anaconda for your operating system.
+            \url{https://www.anaconda.com/products/distribution}\\Download corresponding version of Anaconda for your operating system.
             \\Follow the instructions using recommended settings
         \subsection{Adding to Path}
             This step will vary significantly for each OS
@@ -41,22 +41,25 @@
         \subsection{What is a Virtual Environment?}
             Virtual Environments allow quick and easy changes to the installed packages and python version to enable concise project management.
         \subsection{Virtual Environment w/ Python}
-            Python natively adds quick management of virtual environments using the “venv” command. This should work for any library added by PyPI (Python Package Index - anything you install using “pip”), but recently many libraries exist under Conda libraries.
+            Python natively adds quick management of virtual environments using the command ``venv''.
+            This should work for any library added by PyPI (Python Package Index - anything you install using ``pip''), but recently many libraries exist under Conda libraries.
             \\\url{https://docs.python.org/3/library/venv.html}
         \subsection{Virtual Environments with Anaconda}
             Conda, once installed, has its own Virtual Environment tools which are completely compatible with any PyPI library.
-            \\You may be familiar with the “conda activate base” command that is run whenever Visual Studio opens into a Conda-based Python environment.
+            \\You may be familiar with the ``conda activate base'' command that is run whenever Visual Studio opens into a Conda-based Python environment.
             (This activates the base Conda environment.)
             Here is how you create an environment:
             \begin{enumerate}
                 \item First open a terminal/command prompt (Powershell on Windows)
-                \item The command “conda create -n environment” will create an environment named “environment” with the same packages as “base”  (including Python version)
-                \item This environment can then be activated by using “conda activate environment” and exited with “conda deactivate” (Note: you can deactivate the base Conda environment as well if you wish to be inside the system installed Python.)
+                \item The command ``conda create -n environment'' will create an environment named ``environment'' with the same packages as ``base''  (including Python version)
+                \item This environment can then be activated by using ``conda activate environment'' and exited with ``conda deactivate'' (Note: you can deactivate the base Conda environment as well if you wish to be inside the system installed Python.)
                 \item Once inside an environment you can use “conda install \textlangle package-name\textrangle” or “pip install \textlangle package-name\textrangle” and this will only be installed inside of that environment (which reduces potential conflicts).
             \end{enumerate}
             \url{https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html}
+            \subsubsection{Creating Environments with Files}
+                Using the ``-f \textlangle file name\textrangle'' command argument
         \subsection{A Footnote on Containers}
-        Containers (e.g. Docker \url{https://www.docker.com}) allow further abstraction down to the OS level beyond what virtual environments do.
+        Containers (e.g. Docker - \url{https://www.docker.com}) allow further abstraction down to the OS level beyond what virtual environments do.
         These are very useful for creating environments with completely different programs or with a programs set up in a way that is identical to someone else's set up.
 
 \end{document}
