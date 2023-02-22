@@ -1,6 +1,7 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 
 \usepackage{hyperref}
+\usepackage[margin=0.5in]{geometry}
 
 \title{Python, Anaconda, and Virtual Environments}
 \author{Morgan McCarty}
@@ -23,10 +24,26 @@
                 This means that any program or folder of programs added to Path will function with just their command entered into any terminal.
             
             \subsubsection{Benefits of Adding Programs to Path}
-            There are many benefits to doing this - notably you can execute programs with considerably less setup and it makes detection of system commands (built by those programs) much easier
+                here are many benefits to doing this - notably you can execute programs with considerably less setup and it makes detection of system commands
+                (built by those programs) much easier
 
             \subsubsection{Risks of Adding Programs to Path}
-            There are system commands that, if overridden, can severely mess up your computer if they can no longer be executed (thankfully this is easily reversible)
+                There are system commands that, if overridden, can severely mess up your computer if they can no longer be executed 
+                (this is mainly an issue on Windows, thankfully this is easily reversible)
+
+            \subsection{MacOS or Linux}
+                Anaconda should add itself to PATH during setup
+            \subsection{Windows}
+                Anaconda recommends against being added to PATH and can function entirely through the Anaconda Prompt,
+                but configuring for the command line is possible (and makes some use cases easier).
+                
+                \begin{enumerate}
+                    \item Find the folder to which Anaconda was installed and copy the file directory name to the \textlangle install location\textrangle /bin/activate
+                    \item Open the environmental variables settings menu and click the edit button. Find the Path variable.
+                    \item Add a new entry and paste the copied directory name.
+                    \item Reboot the command prompt/powershell and run “conda -V” to check if it installed correctly.
+                    \item This should also add Python to path so running “python -V” or “python3 -V” should work as well now
+                \end{enumerate}
 
 \end{document}
 
