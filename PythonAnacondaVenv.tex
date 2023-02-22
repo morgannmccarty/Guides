@@ -11,39 +11,50 @@
     \maketitle
 
     \section{Installing Python and/or Anaconda}
-
         \subsection{Download and Install}
             https://www.anaconda.com/products/distribution \\Download corresponding version of Anaconda for your operating system.
             \\Follow the instructions using recommended settings
-
         \subsection{Adding to Path}
             This step will vary significantly for each OS
-
             \subsubsection{What is Path?}
                 Path is an environmental variable which allows programs to be run from the command line/terminal without being directly accessed in the current folder (or without a directory being provided).
                 This means that any program or folder of programs added to Path will function with just their command entered into any terminal.
-            
             \subsubsection{Benefits of Adding Programs to Path}
                 here are many benefits to doing this - notably you can execute programs with considerably less setup and it makes detection of system commands
                 (built by those programs) much easier
-
             \subsubsection{Risks of Adding Programs to Path}
                 There are system commands that, if overridden, can severely mess up your computer if they can no longer be executed 
                 (this is mainly an issue on Windows, thankfully this is easily reversible)
-
-            \subsection{MacOS or Linux}
-                Anaconda should add itself to PATH during setup
-            \subsection{Windows}
-                Anaconda recommends against being added to PATH and can function entirely through the Anaconda Prompt,
-                but configuring for the command line is possible (and makes some use cases easier).
-                
-                \begin{enumerate}
-                    \item Find the folder to which Anaconda was installed and copy the file directory name to the \textlangle install location\textrangle /bin/activate
-                    \item Open the environmental variables settings menu and click the edit button. Find the Path variable.
-                    \item Add a new entry and paste the copied directory name.
-                    \item Reboot the command prompt/powershell and run “conda -V” to check if it installed correctly.
-                    \item This should also add Python to path so running “python -V” or “python3 -V” should work as well now
-                \end{enumerate}
+        \subsection{MacOS or Linux}
+            Anaconda should add itself to PATH during setup
+        \subsection{Windows}
+            Anaconda recommends against being added to PATH and can function entirely through the Anaconda Prompt,
+            but configuring for the command line is possible (and makes some use cases easier).
+            \begin{enumerate}
+                \item Find the folder to which Anaconda was installed and copy the file directory name to the \textlangle install location\textrangle /bin/activate
+                \item Open the environmental variables settings menu and click the edit button. Find the Path variable.
+                \item Add a new entry and paste the copied directory name.
+                \item Reboot the command prompt/powershell and run “conda -V” to check if it installed correctly.
+                \item This should also add Python to path so running “python -V” or “python3 -V” should work as well now
+            \end{enumerate}
+    \section{Configuring Virtual Environment}
+        \subsection{What is a Virtual Environment?}
+            Virtual Environments allow quick and easy changes to the installed packages and python version to enable concise project management.
+        \subsection{Virtual Environment w/ Python}
+            Python natively adds quick management of virtual environments using the “venv” command. This should work for any library added by PyPI (Python Package Index - anything you install using “pip”), but recently many libraries exist under Conda libraries.
+            \\https://docs.python.org/3/library/venv.html
+        \subsection{Virtual Environments with Anaconda}
+            Conda, once installed, has its own Virtual Environment tools which are completely compatible with any PyPI library.
+            \\You may be familiar with the “conda activate base” command that is run whenever Visual Studio opens into a Conda-based Python environment.
+            (This activates the base Conda environment.)
+            Here is how you create an environment:
+            \begin{enumerate}
+                \item First open a terminal/command prompt (Powershell on Windows)
+                \item The command “conda create -n environment” will create an environment named “environment” with the same packages as “base”  (including Python version)
+                \item This environment can then be activated by using “conda activate environment” and exited with “conda deactivate” (Note: you can deactivate the base Conda environment as well if you wish to be inside the system installed Python.)
+                \item Once inside an environment you can use “conda install \textlangle package-name\textrangle” or “pip install \textlangle package-name\textrangle” and this will only be installed inside of that environment (which reduces potential conflicts).
+            \end{enumerate}
+            https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
 
 \end{document}
 
