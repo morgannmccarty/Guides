@@ -37,7 +37,7 @@
                 \item Reboot the command prompt/powershell and run “conda -V” to check if it installed correctly.
                 \item This should also add Python to path so running “python -V” or “python3 -V” should work as well now
             \end{enumerate}
-    \section{Configuring Virtual Environment}
+    \section{Creating Virtual Environment}
         \subsection{What is a Virtual Environment?}
             Virtual Environments allow quick and easy changes to the installed packages and python version to enable concise project management.
         \subsection{Virtual Environment w/ Python}
@@ -57,10 +57,14 @@
             \end{enumerate}
             \url{https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html}
             \subsubsection{Creating Environments with Files}
-                Using the ``-f \textlangle file name\textrangle'' command argument
+                Using the ``-f \textlangle file-name\textrangle'' command argument you can create environments from a file which contains the necessary info.
+                Often these environment files will be provided from complex packages which have specific install instructions.
+                \\E.g.\ for Psychopy: an \href{https://raw.githubusercontent.com/psychopy/psychopy/master/conda/psychopy-env.yml}{environment file} is provided to help create a virtual environment tailored to Psychopy.
+                \\Run ``conda env create -n \textlangle environment-name\textrangle -f psychopy-env.yml'' to create this environment
         \subsection{A Footnote on Containers}
         Containers (e.g. Docker - \url{https://www.docker.com}) allow further abstraction down to the OS level beyond what virtual environments do.
         These are very useful for creating environments with completely different programs or with a programs set up in a way that is identical to someone else's set up.
-
+    \section{Connecting Virtual Environment to VS Code}
+        
 \end{document}
 
