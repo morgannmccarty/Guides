@@ -28,8 +28,9 @@
         \subsection{MacOS or Linux}
             Anaconda should add itself to PATH during setup
         \subsection{Windows}
-            Anaconda recommends against being added to PATH and can function entirely through the Anaconda Prompt,
-            but configuring for the command line is possible (and makes some use cases easier).
+            If you installed Anaconda for only the current user, Anaconda will have an option to add itself to PATH during setup.
+            Anaconda recommends against being added to PATH and can function entirely through the Anaconda Prompt (and/or Anaconda Powershell Prompt),
+            but configuring for the command line is possible (and makes some use cases easier). 
             \begin{enumerate}
                 \item Find the folder to which Anaconda was installed and copy the file directory name to the \textlangle install location\textrangle /bin/activate
                 \item Open the environmental variables settings menu and click the edit button. Find the Path variable.
@@ -48,15 +49,19 @@
             Conda, once installed, has its own Virtual Environment tools which are completely compatible with any PyPI library.
             \\You may be familiar with the ``conda activate base'' command that is run whenever Visual Studio opens into a Conda-based Python environment.
             (This activates the base Conda environment.)
-            Here is how you create an environment:
-            \begin{enumerate}
-                \item First open a terminal/command prompt (Powershell on Windows)
-                \item The command ``conda create -n environment'' will create an environment named ``environment'' with the same packages as ``base''  (including Python version)
-                \item This environment can then be activated by using ``conda activate environment'' and exited with ``conda deactivate'' (Note: you can deactivate the base Conda environment as well if you wish to be inside the system installed Python.)
-                \item Once inside an environment you can use “conda install \textlangle package-name\textrangle” or “pip install \textlangle package-name\textrangle” and this will only be installed inside of that environment (which reduces potential conflicts).
-            \end{enumerate}
-            \url{https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html}
-            \subsubsection{Creating Environments with Files}
+            \subsubsection{The Base Environment}
+                The base environment is the environment which is created when Anaconda is installed.
+                This environment contains the Python version and packages which were installed with Anaconda.
+                \\This environment can be modified, but it is recommended to create a new environment for each project.
+            \subsubsection{Creating an Environment}
+                \begin{enumerate}
+                    \item First open a terminal/command prompt (Powershell on Windows)
+                    \item The command ``conda create -n environment'' will create an environment named ``environment'' with the same packages as ``base''  (including Python version)
+                    \item This environment can then be activated by using ``conda activate environment'' and exited with ``conda deactivate'' (Note: you can deactivate the base Conda environment as well if you wish to be inside the system installed Python.)
+                    \item Once inside an environment you can use “conda install \textlangle package-name\textrangle” or “pip install \textlangle package-name\textrangle” and this will only be installed inside of that environment (which reduces potential conflicts).
+                \end{enumerate}
+                \url{https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html}
+            \subsubsection{Creating an Environment with a File}
                 Using the ``-f \textlangle file-name\textrangle'' command argument you can create environments from a file which contains the necessary info.
                 Often these environment files will be provided from complex packages which have specific install instructions.
                 \\E.g.\ for Psychopy: an \href{https://raw.githubusercontent.com/psychopy/psychopy/master/conda/psychopy-env.yml}{environment file} is provided to help create a virtual environment tailored to Psychopy.
